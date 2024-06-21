@@ -118,6 +118,8 @@ class Sll:
                 return
             previousnode = currentnode
             currentnode = currentnode.nxt
+    def clear(self):
+        self.head = None
 
 
 a = Sll()

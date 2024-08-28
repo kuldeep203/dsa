@@ -74,6 +74,19 @@ class Sll:
             newNode.nxt = current.nxt
             current.nxt = newNode
             self.length += 1
+    def insert_after_value(self,val, data):
+        new_node = Node()
+        new_node.data = data
+        current  = self.head
+        while current.nxt is not None:
+            print("kuldeep daksh")
+            if current.data == val:
+                temp  = current.nxt
+                current.nxt = new_node
+                new_node.nxt = temp
+                self.length+=1
+            current = current.nxt
+
 
     def show_list(self):
         pass

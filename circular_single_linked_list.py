@@ -1,4 +1,4 @@
-from locale import currency
+
 
 
 class Node:
@@ -82,6 +82,15 @@ class Csl:
 
         self.length += 1
 
+    def delete_at_end(self):
+        previousnode = self.head
+        # Traverse the list to find the last node
+        currentnode = self.head
+        while currentnode.nxt != self.head:
+            previousnode = currentnode
+            currentnode = currentnode.nxt
+        previousnode.nxt = self.head
+
 
 a = Csl()
 a.insert_at_beginning(1)
@@ -92,6 +101,7 @@ a.insert_at_end(5)
 a.insert_at_end(6)
 a.insert_at_end(7)
 a.insert_at_end(8)
+a.delete_at_end()
+a.delete_at_end()
 print(a.length)
 print(a.traverse())
-

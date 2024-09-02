@@ -1,4 +1,4 @@
-
+from locale import currency
 
 
 class Node:
@@ -45,6 +45,7 @@ class Csl:
             if current == self.head:
                 break
         print("HEAD")
+        print()
 
     def insert_at_beginning(self, data):
         new_node = Node()
@@ -90,6 +91,17 @@ class Csl:
             previousnode = currentnode
             currentnode = currentnode.nxt
         previousnode.nxt = self.head
+        self.length -= 1
+
+    def delete_at_first(self):
+        current  = self.head
+        self.head = current.nxt
+        while current.nxt != self.head:
+            current = current.nxt
+        current.nxt = self.head
+        self.length-=1
+
+
 
 
 a = Csl()
@@ -102,6 +114,7 @@ a.insert_at_end(6)
 a.insert_at_end(7)
 a.insert_at_end(8)
 a.delete_at_end()
-a.delete_at_end()
+
+a.delete_at_first()
 print(a.length)
 print(a.traverse())
